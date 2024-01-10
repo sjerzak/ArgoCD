@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
+  namespace: argocd
   labels:
     app: backend
 spec:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: sjerzak/backend
+        image: isirli/backend
         ports:
         - containerPort: 5001
       imagePullSecrets:
